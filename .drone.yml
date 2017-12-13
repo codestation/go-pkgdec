@@ -1,0 +1,12 @@
+workspace:
+  base: /go
+  path: src/megpoid.xyz/go/go-pkgdec
+
+pipeline:
+  build:
+    image: golang:1.10
+    commands:
+      - go build ./cmd/...
+    when:
+      event:
+        excludes: deployment
